@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #5b8cd8, #4b6bb0);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 800px;
+  max-width: 95%;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.login-box {
+  display: flex;
+  width: 100%;
+}
+
+.form-section {
+  flex: 1;
+  padding: 2rem;
+  background: #e5f0ff;
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.form-section button {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #4b6bb0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-section button:hover {
+  background-color: #3d5990;
+}
+
+.register-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.register-text a {
+  color: red;
+  text-decoration: none;
+}
+
+.image-section {
+  flex: 1;
+  background-image: url('../img/loginBackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+/* responsive haha */
+@media (max-width: 768px) {
+  .login-container,
+  .login-box {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .image-section {
+    height: 200px;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-section input,
+  .form-section button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .register-text {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 100px;
+  }
+}
+
+@media (max-width: 360px) {
+  .form-section {
+    padding: 1rem;
+  }
+
+  .form-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-section input,
+  .form-section button {
+    font-size: 0.9rem;
+    padding: 0.45rem;
+  }
+
+  .register-text {
+    font-size: 0.85rem;
+  }
+}

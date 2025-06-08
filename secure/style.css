@@ -1,0 +1,770 @@
+body { /* bisa di sesuaikan sesuaikan (pastikan width tetap 100vw) */
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 62px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+}
+
+nav { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    align-items: center;
+}
+
+.navbarLogo { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    height: 50%
+}
+
+.navbarLink { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    text-decoration: none;
+    color: black;
+}
+
+.navbarLogin {  /* komponen utama navbar, warna background tombol login bisa di ubah disini, sisanya sebisa mungkin jangan di ubah */
+    background-color: #FF5858;
+    border-radius: 3px;
+    width: 70px;
+    margin: 0 0 0 -16px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px) { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah*/
+    .navbarDesktop {
+        display: none;
+    }
+
+    .navbarLogin {
+        margin: 0 -16px 0 0;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .navbarExtended { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 62px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-family: 'source sans pro', sans-serif;
+    font-weight: 600;
+    }
+ 
+    .navbarMobile { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+        border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+        padding-bottom: 10px;
+    }
+
+    .navbarJurusan, .navbarHome { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+        margin-top: 0px;
+    }
+}
+
+/* HEADER */
+.headerBackground {
+    width: 100vw;
+    height: 300px;
+    background: linear-gradient(262deg, #FF4F5D 9.81%, #F535DB 87.27%);
+}
+
+.headerBackground > div > p {
+    margin: 0;
+    padding: 0;
+}
+
+.headerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.headerContentTittle {
+    color: #FFF;
+    font-family: 'ITC Eras', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.headerContentDesc {
+    color: #FFF;
+    font-family: "Hanuman";
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 3.12px;
+}
+
+@media (max-width: 800px) {
+    .headerBackground {
+        height: 275px;
+    }
+
+    .headerContent {
+        margin: 0 30px;
+    }
+
+    .headerContentTittle {
+        font-size: 50px;
+    }
+
+    .headerContentDesc {
+        font-size:  21px;
+    }
+}
+
+@media (max-width: 500px) {
+    .headerBackground {
+        height: auto;
+    }
+
+    .headerContent {
+        margin: 0 20px;
+        padding: 40px 0;
+    }
+
+    .headerContentTittle {
+        font-size: 40px;
+    }
+
+    .headerContentDesc {
+        font-size: 17px;
+        letter-spacing: 2.12px;
+    }
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+    margin: 10px auto 0 auto;
+    text-align: center;
+}
+
+.tabs > div {
+    flex: 1;
+    font-family: 'Hanuman';
+    letter-spacing: 1px;
+}
+
+.tabsBerita {
+    border: solid 1px black;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 15px 0 0 0;
+}
+
+.tabsData {
+    border: solid 1px black;
+    border-bottom: "1px solid black";
+    background-color: rgba(0, 0, 0, 0.092);
+}
+
+.tabsQna {
+    border: solid 1px black;
+    border-left: none;
+    border-bottom: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.092);
+}
+
+.tabsGambar {
+    border: solid 1px black;
+    border-left: none;
+    border-bottom: 1px solid black;
+    border-radius: 0 15px 0 0;
+    background-color: rgba(0, 0, 0, 0.092);
+}
+
+/* KESELURUHAN */
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-top: none;
+    padding: 0 15px;
+    gap: 10px;
+    border-radius: 0 0 15px 15px;
+}
+.inputData button {
+    background-color: #55ff74;
+    padding: 5px;
+}
+
+.outputData button {
+    background-color: #f45d5d;
+    padding: 5px 10px;
+}
+
+.box button {
+    border: 1px solid;
+    border-radius: 3px;
+}
+
+.jurusan {
+    display: none;
+}
+
+.qna {
+    display: none;
+}
+
+.img {
+    display: none;
+}
+
+/* BERITA */
+.beritaWarning {
+    display: none;
+}
+
+.beritaSuccess {
+    display: none;
+}
+
+.beritaGagal {
+    display: none;
+}
+
+.beritaKelebihan {
+    display: none;
+}
+
+.lihatBeritaGagal {
+    display: none;
+}
+
+.inputData {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputData .beritaJudul, .inputData .beritaIsi {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.beritaIsi textarea {
+    height: 100px;
+}
+
+.outputData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.beritaContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.beritaContent button {
+    width: 100%;
+}
+
+.outputData p {
+    margin:  0;
+    padding: 0;
+}
+
+.outputData > div {
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+}
+
+.outputData .deskripsi {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: -5px;
+}
+
+/* JURUSAN KESELURUHAN */
+.jurusanHeader {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.jurusanHeader select {
+    height: 25px;
+}
+
+.jurusanContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.jurusanContent > div > p {
+    margin: 0;
+}
+
+.jurusanContent > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.jurusanContent button {
+    border: 1px solid black;
+}
+
+.materiTambah, .kejuaraanTambah, .lulusanTambah {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.materiTambah input, .kejuaraanTambah input, .lulusanTambah input {
+    width: 100%;
+}
+
+.materiTambah button, .kejuaraanTambah button, .lulusanTambah button {
+    padding: 3px 15px;
+    background-color: #55ff74;
+}
+
+.materiLihat, .kejuaraanLihat, .lulusanLihat {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.containerDataMateri, .containerDataKejuaraan, .containerDataLulusan {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.containerDataMateri button, .containerDataKejuaraan button, .containerDataLulusan button {
+    background-color: #f45d5d;
+    padding: 2px 15px;
+}
+
+/* MATERI */
+.materiWarning {
+    display: none;
+}
+
+.materiBerhasil {
+    display: none;
+}
+
+.materiError {
+    display: none;
+}
+
+/* KEJUARAAN */
+.kejuaraanWarning {
+    display: none;
+}
+
+.kejuaraanBerhasil {
+    display: none;
+}
+
+.kejuaraanError {
+    display: none;
+}
+
+/* LULUSAN */
+.lulusanWarning {
+    display: none;
+}
+
+.lulusanBerhasil {
+    display: none;
+}
+
+.lulusanError {
+    display: none;
+}
+
+/* QNA */
+.lihatQnaGagal {
+    display: none;
+}
+
+.qnaWarning {
+    display: none;
+}
+
+.qnaSuccess {
+    display: none;
+}
+
+.qnaGagal {
+    display: none;
+}
+
+#qnaKelebihan {
+    display: none;
+}
+
+.qnaHeader {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.qnaHeader > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.qnaHeader textarea {
+    height: 100px;
+}
+
+.qnaHeader button {
+    background-color: #55ff74;
+    padding: 5px;
+}.outputQna p {
+    margin: 0;
+}
+
+.outputQna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.outputQna > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.outputQna .username {
+    margin-top: -5px;
+}
+
+.outputQna button {
+    width: 100%;
+    padding: 5px;
+    background-color: #f45d5d;
+}
+
+/* GAMBAR */
+.img > div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.img > div > div {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+
+.kepsekUpload form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.kepsekUpload form input {
+    flex: 1;
+}
+
+.kepsekUpload form button {
+    padding: 5px 20px;
+    background-color: #f45d5d;
+}
+
+.kepsekContent {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.kepsekContent img{
+    height: 30%;
+    width: 30%;
+}
+
+/* FOOTER */
+.footerWave { /* styling wave nya, bisa di atur jika ada masalah */
+  display: block;
+  margin: 0;
+}
+
+.footer { /* tempat ganti warna footer nya (tidak termasuk wave) */
+    background: linear-gradient(90deg, #FF4F5D -1.32%, #F535DB 99.59%);
+    width: 100%;
+    margin-top: -1px;
+}
+
+.footer p { /* styling quotes nya */
+    margin: 0;
+    color: #FFF;
+    font-family: "Eras Bold ITC";
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.footerContainer { /* styling 3 box informasi, harusnya ga ada masalah */
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin: 30px 30px 0 30px;
+}
+
+.footerContainer > div { /* styling 3 box informasi, harusnya ga ada masalah */
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.footerContainer a { /* styling 3 box informasi, harusnya ga ada masalah */
+    text-decoration: none;
+    color: #FFF;
+}
+
+.f1-header, .f2-header, .f3-header { /* styling 3 box informasi, harusnya ga ada masalah */
+    font-family: "Fragment Mono";
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.f1-content, .f2-content, .f3-content { /* styling 3 box informasi, harusnya ga ada masalah */
+    font-family: "Fragment Mono";
+    color: #FFF;
+    font-size: 14px;
+}
+
+.endInformation { /* styling informasi tambahan di paling bawah, harusnya ga ada masalah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px auto 0 auto;
+    gap: 100px;
+    border-top: solid 1px rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+
+}
+
+.endInformation > div { /* styling informasi tambahan di paling bawah, harusnya ga ada masalah */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.endInformation a { /* styling informasi tambahan di paling bawah, harusnya ga ada masalah */
+    text-decoration: none;
+    font-family: "Fragment Mono";
+    color: #FFF;
+    font-size: 12px;
+}
+
+.footerIcon { /* styling icon di informasi tambahan, harusnya ga ada masalah */
+    font-size: 18px;
+    color: #FFF;
+}
+
+@media (max-width: 800px) { /* penyesuaian design di 600-800px */
+    .footerContainer {
+        gap: 50px;
+    }
+
+    .endInformation {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) { /* penyesuaian design di 600px kebawah, responsif tablet sama mobile ke sini jatuhnya */
+    .footer p {
+        font-size: 25px;
+    }
+
+    .f1-header, .f2-header, .f3-header {
+        font-family: "Fragment Mono";
+        font-weight: 600;
+        font-size: 12px;
+        color: #FFF;
+    }
+
+    .f1-content, .f2-content, .f3-content {
+        font-family: "Fragment Mono";
+        color: #FFF;
+        font-size: 12px;
+    }
+
+    .Inf-Phone-Txt, .Inf-Email-Txt, .Inf-Web-Txt {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) { /* ngubah size font quotes nya aja biar lebih kecil di mobile  */
+    .footer p {
+        font-size: 20px;
+    }
+}
+
+/* BUG FIX */
+.containerJudulDataMateri, .containerJudulDataKejuaraan, .containerJudulDataLulusan {
+    flex: 1;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.beritaContent {
+    flex: 1;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.qnaData {
+    flex: 1;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.isi {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* font */
+.judulAwal {
+    font-family: 'ITC Eras', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+label, .materiJudul, .kejuaraanJudul, .lulusanJudul {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.judulDataMateri, .judulDatakejuaraan, .judulDataLulusan {
+    font-family: 'Hanuman';
+    font-size: 15px;
+}
+
+.kepsekJudul {
+    margin: 0 0 2px 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.kepsekForm {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.kepsekContentJudul {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.judul {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.isi {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.hapusBTN button {
+    font-size: 14px;
+}
+
+.hapusBTN {
+    font-size: 13px;
+}
+
+.postBTN {
+    font-size: 14px;
+}
+
+input, textarea {
+    padding: 6px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Tambah Akun */
+.tambahAkun {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px 0 0 10%;
+    width: 150px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: orange;
+}

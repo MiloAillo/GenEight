@@ -1,0 +1,791 @@
+html {
+    scroll-behavior: smooth; /* untuk smooth scroll */
+}
+
+body { /* bisa di sesuaikan sesuaikan (pastikan width tetap 100vw) */
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
+.navbarContainer {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100vw;
+    background-color: white;
+}
+
+
+.navbar { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 62px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+nav { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    align-items: center;
+}
+
+.navbarLogo { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    height: 50%
+}
+
+.navbarLink { /* komponen utama navbar, sebisa mungkin jangan di ubah */
+    text-decoration: none;
+    color: black;
+}
+
+.navbarLogin {  /* komponen utama navbar, warna background tombol login bisa di ubah disini, sisanya sebisa mungkin jangan di ubah */
+    background-color: #FF5858;
+    border-radius: 3px;
+    width: 70px;
+    margin: 0 0 0 -16px;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdownJurusan:hover .jurusanContent {
+    display: flex;
+}
+
+.jurusanContent {
+    position: absolute;
+    background-color: #FFF;
+    display: none;
+    flex-direction: column;
+    width: 80px;
+    gap: 10px;
+    border-radius: 0 0 5px 5px;
+}
+
+.jurusanContent a {
+    text-decoration: none;
+    color: black;
+        padding: 5px 5px;
+}
+
+.jurusanContent a:hover {
+    background-color: #00000043;
+}
+
+.dropdownMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    display: none;
+}
+
+.dropdownMobile a {
+    color: black;
+}
+
+.jurusanDD {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.jurusanJudul {
+    margin: 0;
+}
+
+@media (max-width: 600px) { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah*/
+    .navbarDesktop {
+        display: none;
+    }
+
+    .navbarLogin {
+        margin: 0 -16px 0 0;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+
+    .navbarExtended { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 62px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-family: 'source sans pro', sans-serif;
+    font-weight: 600;
+    }
+ 
+    .navbarMobile { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+        border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+        padding-bottom: 10px;
+    }
+
+    .navbarJurusan { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+        margin-top: 0px;
+    }
+}
+
+
+@media (min-width: 600px) { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+    #navbarExtendBTN {
+        display: none;
+    }
+}
+
+.navbarExtended { /* komponen utama navbar mobile, sebisa mungkin jangan di ubah */
+        display: none; 
+}
+/* Header */
+.headerBackground { /* background header */
+    background: linear-gradient(262deg, #FF4F5D 9.81%, #FF47A3 87.27%), linear-gradient(224deg, #FF5858 -0.76%, #C00 100.5%);
+    height: 80vh;
+    max-height: 750px;
+    min-height: 650px;
+    z-index: 0;
+}
+
+.headerContent { /* konten header */
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 180px;
+    gap: 100px;
+}
+
+.headerIMG { /* gambar kepsek */
+    align-self: flex-end;
+    width: 485px;
+    z-index: 1;
+}
+
+.headerBox1 img { /* logo */
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.headerBox1 p { /* Paragraf di Box1 */
+    margin: 0;
+    padding: 0;
+}
+
+.headerBox1 { /* Box1 */
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.296));
+}
+
+.headerTittle { /* Judul di Header */
+color: #FFF;
+font-family: 'ITC Eras', sans-serif;
+
+font-size: 60px;
+font-weight: 600;
+}
+
+.headerDesc { /* Deskripsi di Header */
+    color: #FFF;
+    font-family: "Hanuman";
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 3.12px;
+}
+
+.headerJurusanBox { /* Kontainer Logo Jurusan */
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 800px;
+    margin: -75px auto 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.PPLG, .PS, .LK, .DKV {
+    height: 100px;
+}
+
+.TJKT {
+    height: 60px;
+}
+
+@media (min-width: 1549px) {
+    .headerContent {
+        max-width: 1550px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1230px) { /* Responsive untuk Header */
+    .headerContent {
+        margin: 0 50px;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .headerIMG {
+        display: none;
+    }
+
+    .headerContent {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+    }
+
+    .headerContent p {
+        text-align: center;
+    }
+
+    .headerBox1 {
+        align-items: center;
+    }
+
+    .headerJurusanBox {
+        width: 100%;
+        padding: 20px 0;
+        border-radius: 0;
+        overflow-x: auto;
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    .headerBackground {
+        height: 450px;
+    }
+
+    .headerContent {
+        margin: 0 20px;
+        gap: 20px;
+    }
+
+    .headerBox1 {
+        width: 100%;
+    }
+
+    .headerTittle {
+        font-size: 35px;
+    }
+
+    .headerDesc {
+        font-size: 20px;
+    }
+
+    .headerJurusanBox {
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+        overflow-x: auto;
+        justify-content: flex-start;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2) inset;
+        border-radius: 0;
+        scrollbar-width: none;
+    }
+
+    .PPLG, .PS, .LK, .DKV {
+        height: 70px;
+    }
+
+    .TJKT {
+        height: 50px;
+    }
+
+    .headerBackground {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .headerBackground {
+        height: 350px;
+    }
+
+    .headerContent {
+        margin: 0 20px;
+        gap: 20px;
+    }
+
+    .headerBox1 {
+        width: 100%;
+    }
+
+    .headerTittle {
+        font-size: 35px;
+    }
+
+    .headerDesc {
+        font-size: 20px;
+    }
+}
+
+/* CONTENT */
+/* -- Information -- */
+.contentInformation {   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+.contentInformation > div {
+    width: 40%;
+}
+
+.contentInformationJudul {
+    font-family: 'ITC Eras', 'helvetica';
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.contentInformationIsi {
+    font-family: 'Hanuman', 'helvetica';
+    font-size: 18px;
+    font-weight: 400;
+}
+
+@media (max-width: 900px) {
+    .contentInformationJudul {
+        font-size: 25px;
+    }
+
+    .contentInformationIsi {
+        font-size: 14px;
+    }
+
+    .contentInformation > div {
+        width: 43%;
+    }
+}
+
+@media (max-width: 700px) {
+    .contentInformation {
+        flex-direction: column;
+        margin: 0 20px;
+        gap: 0;
+    }
+
+    .contentInformation > div {
+        width: 100%;
+    }
+}
+
+/* -- Jurusan -- */
+.contentJurusan {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 30px;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+.contentJurusan > div:hover {
+    scale: 1.02;
+}
+
+.contentJurusan > div > .contentBox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contentJurusan p {
+    margin: 0;
+    padding: 0;
+}
+
+.contentJurusan button {
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Hanuman', 'helvetica';
+    font-size: 16px;
+    margin-top: auto;
+    transition: all 0.2s ease;
+}
+
+.contentJurusan button:hover {
+    background-color: rgba(255, 255, 255, 0.793);
+    cursor: pointer;
+    scale: 0.98;
+}
+
+.contentJurusanJudul {
+    font-family: 'ITC Eras', 'helvetica';
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.contentJurusanIsi {
+    font-family: 'Hanuman', 'helvetica';
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.ContentJurusanIsiBox {
+    height: auto;
+    margin: 15px 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.contentJurusan > div {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 13px;
+    height: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.393);
+    transition: scale 0.2s ease;
+}
+
+.contentBox {
+    flex: 1;
+}
+
+.jurusanIMG img {
+  max-height: 100%;
+  width: auto;
+}
+
+.jurusanIMG {
+    flex: 1;
+    display: flex;
+    margin-bottom: -20px;
+    justify-content: center;
+}
+
+.contentJurusanBox2, .contentJurusanBox4 {
+  flex-direction: row-reverse;
+}
+
+.contentJurusanBox1, .contentJurusanBox3, .contentJurusanBox5 {
+    flex-direction: row;
+}
+
+.contentJurusanBox1 {
+    background: linear-gradient(173deg, #88B2FF -3.03%, #1525FF 167.25%);
+}
+
+.contentJurusanBox2 {
+    background: linear-gradient(162deg, #FFF -12.49%, #EEA113 97.16%);
+}
+
+.contentJurusanBox3 {
+    background: linear-gradient(197deg, #FFF 5.74%, #EADDDD 96.82%);
+}
+
+.contentJurusanBox4 {
+    background: linear-gradient(166deg, #B0A8F7 1.2%, #2020AC 88.93%), #D9D9D9;
+
+}
+
+.contentJurusanBox5 {
+    background: linear-gradient(165deg, #A9FFA7 7.61%, #06BD12 110.13%);
+}
+
+@media (max-width: 1000px) {
+    .jurusanIMG {
+        display: none;
+    }
+
+    .contentJurusan {
+        flex-direction: row;
+    }
+
+    .contentJurusan > div {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    width: 400px;
+    border-radius: 13px;
+    height: 300px;
+    }
+}
+
+@media (max-width: 950px) {
+    .contentJurusan > div {
+        width: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .contentJurusan {
+        flex-direction: row;
+        justify-content: left;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 0 15px;
+        margin-top: 10px;
+    }
+
+    .contentJurusan > div {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: flex-start;
+        width: 60%;
+    }
+    
+    .contentJurusan > div > button {
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+    }
+
+    .contentJurusanJudul {
+        font-size: 22px;
+    }
+
+    .contentJurusanIsi {
+        font-size: 14px;
+    }
+}
+
+/* -- berita -- */
+.contentBerita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 30px 10px 30px;
+}
+
+.contentBerita p {
+    margin: 0;
+    padding: 0;
+}
+
+.contentBeritaInformation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+.contentBeritaInformation a {
+    width: 100%;
+    word-break: break-word;
+    font-size: 17px;
+}
+
+.contentBeritaInformationJudul {
+    font-family: 'Hanuman', 'helvetica';
+    font-size: 18px;
+}
+
+.contentBeritaInformationJudul a {
+    text-decoration: none;
+    color: #000;
+}
+
+.contentBeritaInformationDeskripsi {
+    font-family: 'Hanuman', 'helvetica';
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.contentBeritaTittle {
+    font-family: 'ITC Eras', 'helvetica';
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.contentBeritaBox {
+    max-height: 500px;
+    overflow-y: scroll;
+    scrollbar-color: #00000045 #eef39600;
+    width: 75%;
+}
+
+@media (max-width: 600px) {
+    .contentBeritaTittle {
+        font-size: 22px;
+    }
+
+    .contentBeritaInformationJudul {
+        font-size: 14px;
+    }
+
+    .contentBeritaInformationDeskripsi {
+        font-size: 12px;
+    }
+}
+/* FOOTER */
+
+.footerWave { /* styling wave nya, bisa di atur jika ada masalah */
+  display: block;
+  margin: 0;
+  height: auto;
+  width: 100%;
+}
+
+.footer { /* tempat ganti warna footer nya (tidak termasuk wave) */
+    background: linear-gradient(90deg, #FF4F5D -1.32%, #F535DB 99.59%);
+    width: 100%;
+    margin-top: -1px;  
+}
+
+.footer p { /* styling quotes nya */
+    margin: 0;
+    color: #FFF;
+    font-family: "ITC Eras";
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.footerContainer { /* styling 3 box informasi, harusnya ga ada masalah */
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin: 30px 30px 0 30px;
+}
+
+.footerContainer > div { /* styling 3 box informasi, harusnya ga ada masalah */
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.footerContainer a { /* styling 3 box informasi, harusnya ga ada masalah */
+    text-decoration: none;
+    color: #FFF;
+}
+
+.f1-header, .f2-header, .f3-header { /* styling 3 box informasi, harusnya ga ada masalah */
+    font-family: "Fragment Mono";
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.f1-content, .f2-content, .f3-content { /* styling 3 box informasi, harusnya ga ada masalah */
+    font-family: "Fragment Mono";
+    color: #FFF;
+    font-size: 14px;
+}
+
+.endInformation { /* styling informasi tambahan di paling bawah, harusnya ga ada masalah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px auto 0 auto;
+    gap: 100px;
+    border-top: solid 1px rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+
+}
+
+.endInformation > div { /* styling informasi tambahan di paling bawah, harusnya ga ada masalah */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.endInformation a { /* styling informasi tambahan di paling bawah, harusnya ga ada masalah */
+    text-decoration: none;
+    font-family: "Fragment Mono";
+    color: #FFF;
+    font-size: 12px;
+}
+
+.footerIcon { /* styling icon di informasi tambahan, harusnya ga ada masalah */
+    font-size: 18px;
+    color: #FFF;
+}
+
+@media (max-width: 800px) { /* penyesuaian design di 600-800px */
+    /* FOOTER */
+    .footerContainer {
+        gap: 50px;
+    }
+
+    .endInformation {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) { /* penyesuaian design di 600px kebawah, responsif tablet sama mobile ke sini jatuhnya */
+    /* FOOTER */
+    .footer p {
+        font-size: 25px;
+    }
+
+    .f1-header, .f2-header, .f3-header {
+        font-family: "Fragment Mono";
+        font-weight: 600;
+        font-size: 12px;
+        color: #FFF;
+    }
+
+    .f1-content, .f2-content, .f3-content {
+        font-family: "Fragment Mono";
+        color: #FFF;
+        font-size: 12px;
+    }
+
+    .Inf-Phone-Txt, .Inf-Email-Txt, .Inf-Web-Txt {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) { /* ngubah size font quotes nya aja biar lebih kecil di mobile  */
+    .footer p {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+        <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Hanuman&display=swap" rel="stylesheet"> <!-- import font FRAGMENT MONO dan Hanuman -->
+    <link href="https://fonts.cdnfonts.com/css/source-sans-pro" rel="stylesheet"> 
+    <link href="https://fonts.cdnfonts.com/css/itc-eras-ultra" rel="stylesheet"> <!-- import font ERAS BOLD ITC -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block"> <!-- import google icons -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- navbar -->
+    <div class="navbar">     <!-- Kontainer navbar utama -->
+        <img src="img/FullSMKN8.png" alt="smkn8" class="navbarLogo">
+        <a>
+            <a href="/logout"><span class="material-symbols-outlined" id="navbarExtendBTN">logout</span></a>
+        </nav>
+    </div>
+
+<!-- HEADER -->
+<div class="headerBackground">
+    <div class="headerContent">
+        <p class="headerContentTittle">Admin Panel</p>
+        <p class="headerContentDesc">Tempat anda menambah berita dan mengupdate bagian data</p>
+    </div>
+</div>
+
+<!-- TABS -->
+ <div class="tabs">
+    <div class="tabsBerita" id="berita"><p>Berita</p></div>
+    <div class="tabsData" id="data"><p>Jurusan</p></div>
+    <div class="tabsQna" id="qna"><p>QnA</p></div>
+    <div class="tabsGambar" id="gambar"><p>Gambar</p></div>
+ </div>
+
+ <!-- BEERITA -->
+  <div class="box berita">
+    <div class="inputData">
+        <p class="judulAwal">Post Berita</p>
+        <div class="beritaJudul"><label for="judul">Judul</label><input type="text" name="judul" id="judul" class="judul"></div>
+        <div class="beritaIsi"><label for="isi">Isi</label><textarea name="isi" id="isi" class="isi"></textarea><p id="beritaWarning" class="beritaWarning">Isi data terlebih dahulu</p><p id="beritaSuccess" class="beritaSuccess">Berita telah terpost</p><p id="beritaGagal" class="beritaGagal">Internal Error</p><p class="beritaKelebihan" id="beritaKelebihan">Judul melebihi batas maksimal (255 huruf)!</p></div>
+        <button class="postBTN" id="postBerita" onclick="postBerita()">Post</button>
+    </div>
+    <div class="outputData" id="outputData">
+        <p class="lihatBeritaGagal" id="lihatBeritaGagal">Tidak dapat mengambil data berita saat ini.</p>
+    </div>
+  </div>
+
+<!-- JURUSAN: BARU -->
+<div class="box jurusan">
+    <div class="jurusanHeader">
+        <p class="judulAwal">Pilih Jurusan</p>
+        <select name="jurusan" id="jurusanDD" class="jurusanDD">
+            <option value="none" disabled>--Pilih Jurusan--</option>
+            <option value="PPLG">PPLG</option>
+            <option value="TJKT">TJKT</option>
+            <option value="PS">PS</option>
+            <option value="DKV">DKV</option>
+            <option value="LK">LK</option>
+        </select>
+    </div>
+    <div class="jurusanContent">
+        <div class="jurusanMateri">
+            <p class="materiJudul">Materi</p>
+            <div class="materiHeader">
+                <div class="materiTambah">
+                    <input type="text" name="isi" id="materiInput">
+                    <button class="postBTN" onclick="tambahMateri()">Tambah</button>
+                </div>
+                <p class="materiWarning" id="materiWarning">Isi data terlebih dahulu!</p>
+                <p class="materiBerhasil" id="materiBerhasil">Data berhasil ditambahkan!</p>
+                <p class="materiError" id="materiError">Server Error!</p>
+            </div>
+            <ol class="materiLihat" id="materiLihat"></ol>
+        </div>
+        <div class="jurusanKejuaraan">
+            <p class="kejuaraanJudul">Kejuaraan</p>
+            <div class="kejuaraanHeader">
+                <div class="kejuaraanTambah">
+                    <input type="text" name="isi" id="kejuaraanInput">
+                    <button class="postBTN" onclick="tambahKejuaraan()">Tambah</button>
+                </div>
+                <p class="kejuaraanWarning" id="kejuaraanWarning">Isi data terlebih dahulu!</p>
+                <p class="kejuaraanBerhasil" id="kejuaraanBerhasil">Data berhasil ditambahkan!</p>
+                <p class="kejuaraanError" id="kejuaraanError">Server Error!</p>
+            </div>
+            <ol class="kejuaraanLihat" id="kejuaraanLihat"></ol>
+        </div>
+        <div class="jurusanLulusan">
+            <p class="lulusanJudul">Lulusan</p>
+            <div class="lulusanHeader">
+                <div class="lulusanTambah">
+                    <input type="text" name="isi" id="lulusanInput">
+                    <button class="postBTN" onclick="tambahLulusan()">Tambah</button>
+                </div>
+                <p class="lulusanWarning" id="lulusanWarning">Isi data terlebih dahulu!</p>
+                <p class="lulusanBerhasil" id="lulusanBerhasil">Data berhasil ditambahkan!</p>
+                <p class="lulusanError" id="lulusanError">Server Error!</p>
+            </div>
+            <ol class="lulusanLihat" id="lulusanLihat"></ol>
+        </div>
+    </div>
+</div>
+
+<!-- QNA -->
+  <div class="box qna">
+    <div class="qnaHeader">
+        <p class="judulAwal">Post QnA</p>
+        <div><label for="pertanyaan">Pertanyaan</label><input type="text" name="pertanyaan" id="pertanyaan" class="pertanyaan judul"></div>
+        <div><label for="jawaban">Jawaban</label><textarea name="jawaban" id="jawaban" class="jawaban isi"></textarea><p id="qnaWarning" class="qnaWarning">Isi data terlebih dahulu</p><p id="qnaSuccess" class="qnaSuccess">QnA telah terpost</p><p id="qnaGagal" class="qnaGagal">Internal Error</p><p id="qnaKelebihan">Pertanyaan melebihi batas maksimal (255 huruf)!</p></div>
+        <button id="postQna" class="postBTN" onclick="postQna()">Post</button>
+    </div>
+    <div class="outputQna" id="outputQna">
+        <p class="lihatQnaGagal" id="lihatQnaGagal">Tidak dapat mengambil data QnA saat ini.</p>
+    </div>
+  </div>
+
+<!-- IMG -->
+<div class="box img">
+    <div class="kepsek">
+        <p class="judulAwal">Update Gambar</p>
+        <div class="kepsekUpload">
+            <p class="kepsekJudul">Ganti Gambar Kepsek</p>
+            <form action="/updateKepsek" method="post" enctype="multipart/form-data" class="kepsekForm" id="kepsekForm">
+                <input type="file" name="kepsek" id="kepsek" accept="image/png" required>
+                <button class="postBTN" type="submit">Ganti</button>
+            </form>
+            <p id="imgWarning" style="display: none;"></p>
+        </div>
+                    <p class="kepsekContentJudul">Gambar Saat Ini</p>
+        <div class="kepsekContent">
+            <img src="/img/kepsek.png" alt="kepsek">
+        </div>
+    </div>
+</div>
+
+<!-- tombol tambah user -->
+ <div class="tambah user">
+    <a href="register/register.html"><button class="tambahAkun" id="tambahAkun">Tambah Akun</button></a>
+ </div>
+
+<!-- FOOTER -->
+<svg class="footerWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <defs>
+    <linearGradient id="waveGradient"
+                    gradientUnits="userSpaceOnUse"
+                    x1="0" y1="0" x2="1440" y2="320">
+      <stop offset="0%"   stop-color="#FF4F5D"/>
+      <stop offset="100%" stop-color="#F535DB"/>
+    </linearGradient>
+  </defs>
+<path class="wave" fill="url(#waveGradient)" fill-opacity="1" d="M0,160L80,186.7C160,213,320,267,480,277.3C640,288,800,256,960,234.7C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+
+<div class="footer">
+    <div><p>INOVATIF, DISIPLIN, KOLABORATIF.</p></div>
+
+    <div class="footerContainer">
+        <div class="footerBox1">
+            <div class="f1-header">SMKN 8 Semarang</div>
+            <div class="f1-content">
+                Jalan Pandanaran II No.12 <br>
+                Mugassari, Semarang Selatan <br>
+                Kode Pos: 50249
+            </div>
+        </div>
+
+        <div class="footerBox2">
+            <div class="f2-header">Kontak Sekolah</div>
+            <div class="f2-content">
+                <a href="https://www.instagram.com/humas.smk8semarang/">Instagram</a> <br>
+                <a href="https://www.facebook.com/smkn8semarang/">Facebook</a><br>
+                <a href="https://www.tiktok.com/@smk8semarang">TikTok</a>
+            </div>
+        </div>
+        
+        <div class="footerBox3">
+            <div class="f3-header">Kontak Tim</div>
+            <div class="f3-content">
+                <a href="https://wa.me/qr/TRBLPOLEAQNTM1">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="endInformation">
+        <div class="Inf-Phone">
+            <a href="tel:+62243123456"><span class="material-symbols-outlined footerIcon">call</span></a>
+            <a class="Inf-Phone-Txt" href="tel:+62243123456">+62 243 123 456</a>
+        </div>
+
+        <div class="Inf-Email">
+            <a href="mailto:smkn8_semarang@yahoo.com"><span class="material-symbols-outlined footerIcon">email</span></a>
+            <a class="Inf-Email-Txt" href="mailto:smkn8_semarang@yahoo.com">smkn8_semarang@yahoo.com</a>
+        </div>
+
+        <div class="Inf-Web">
+            <a href="https://smkn8semarang.sch.id/"><span class="material-symbols-outlined footerIcon">web</span></a>
+            <a class="Inf-Web-Txt" href="https://smkn8semarang.sch.id/">smkn8semarang.sch.id</a>
+        </div>
+    </div>
+</div>
+
+    <script src="logic.js"></script>
+</body>
+</html>

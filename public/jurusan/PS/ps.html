@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pekerjaan Sosial</title>
+  <title>Navigation bar </title>
+        <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Hanuman&display=swap" rel="stylesheet"> <!-- import font FRAGMENT MONO dan Hanuman -->
+    <link href="https://fonts.cdnfonts.com/css/source-sans-pro" rel="stylesheet"> 
+    <link href="https://fonts.cdnfonts.com/css/itc-eras-ultra" rel="stylesheet"><!-- import font ERAS BOLD ITC -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block"> <!-- import google icons -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbarContainer">
+        <div class="navbar">     <!-- Kontainer navbar utama -->
+            <img src="../../img/FullSMKN8.png" alt="smkn8" class="navbarLogo">
+            <nav>
+                <p class="navbarHome navbarDesktop"><a href="/" class="navbarLink">Home</a></p>
+                <div class="dropdownJurusan">
+                    <p class="navbarJurusan navbarDesktop"><a href="/" class="navbarLink">Jurusan</a></p>
+                    <div class="jurusanContent">
+                        <a href="/jurusan/PPLG/pplg.html">PPLG</a>
+                        <a href="/jurusan/TJKT/tjkt.html">TJKT</a>
+                        <a href="/jurusan/DKV/dkv.html">DKV</a>
+                        <a href="/jurusan/LK/lk.html">LK</a>
+                        <a href="/jurusan/PS/ps.html">PS</a>
+                    </div>
+                </div>
+                <p class="navbarQnA navbarDesktop"><a href="/qna/qna.html" class="navbarLink">QnA</a></p>
+                <p class="navbarLogin"><a href="/login/login.html" class="navbarLink">Login</a></p>
+                <span class="material-symbols-outlined" id="navbarExtendBTN">menu</span>
+            </nav>
+        </div>
+        <div class="navbarExtended" id="navbarExtended"> <!-- Kontainer navbar menu mobile -->
+            <p class="navbarQnA navbarMobile"><a href="/qna/qna.html" class="navbarLink">QnA</a></p>
+            <div class="jurusanDD navbarJurusan navbarMobile">
+                <p class="jurusanJudul">Jurusan</p>
+                <div class="dropdownMobile">
+                    <a href="/jurusan/PPLG/pplg.html">PPLG</a>
+                    <a href="/jurusan/TJKT/tjkt.html">TJKT</a>
+                    <a href="/jurusan/DKV/dkv.html">DKV</a>
+                    <a href="/jurusan/LK/lk.html">LK</a>
+                    <a href="/jurusan/PS/ps.html">PS</a>
+                </div>
+            </div>
+            <p class="navbarHome navbarMobile"><a href="/" class="navbarLink">Home</a></p>
+        </div>
+    </div>
+<style>
+/* ------------------------------------- */
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    .login-button {
+      background: #00f;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .hero {
+      background: linear-gradient(226deg, rgba(237, 255, 79, 0.87) -6.07%, #0ECE41 162.13%), #D9D9D9;
+      color: white;
+      height: 500px;
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0 50px;
+    }
+
+
+.square h1 {
+  margin: 0;
+  font-size: 50px;
+  font-family: 'ITC Eras';
+  font-weight: 600;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.252));
+}
+
+.tittle p {
+  margin: 0;
+  font-size: 24px;
+  font-family: 'ITC Eras';
+  font-weight: 600;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.252));
+}
+
+
+.square img {
+  height: 80px;
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.252));
+}
+
+.square {
+  flex: 1 1 0;
+  max-width: 450px;
+}
+
+.square2 {
+  flex: 1 0 0;
+  display: flex;
+  align-items: flex-end;     /* vertical centering; change to flex-end to pin it to the bottom */  height: 100%;
+  max-width: 672px;
+}
+
+.square2 img {
+    max-height: 85%;
+    height: auto;
+    width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .square2 {
+    display: none;
+  }
+
+  .hero {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+}
+
+li {
+    word-break: break-word;
+}
+
+
+@media (max-width: 800px) {
+  .square2 img {
+    display: none;
+  }
+
+  .hero {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .square h1 {
+  font-size: 35px;
+  }
+
+  .tittle p {
+    font-size: 20px;
+  }
+
+  .hero {
+    height: 350px;
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+.content h3 {
+  margin-top: 30px;
+}
+
+.statis {
+  margin: 50px 100px;
+  max-width: 1440px;
+}
+
+@media (min-width: 1540px) {
+  .statis {
+    margin: 50px auto;
+  }
+}
+
+.isi {
+  font-family: 'Hanuman';
+  font-size: 24px;
+}
+
+.statis h3 {
+  font-family: 'ITC Eras';
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.statis p {
+  line-height: 1.6;
+}
+
+.box h4 {
+  font-family: 'ITC Eras';
+  font-weight: 600;
+  font-size: 32px;
+  margin: 0;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: linear-gradient(246deg, #FCFFE2 -2.93%, #D3FFD9 96.09%);
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 85%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 1440px;
+}
+
+.box {
+  flex: 1;
+  min-width: 300px;
+  margin: 10px;
+}
+
+#materi, #kejuaraan, #lulusan {
+  max-height: 600px;
+  overflow-y: scroll;
+  scrollbar-color: #ffffff #eef39600;
+}
+
+@media (max-width: 800px) {
+  .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box h4 {
+    font-family: 'ITC Eras';
+    font-weight: 600;
+    font-size: 25px;
+    margin: 0;
+  }
+
+  #materi, #kejuaraan, #lulusan {
+  max-height: 200px;
+  overflow-y: scroll;
+  }
+}
+
+@media (max-width: 600px) {
+  .statis {
+    margin: 20px 50px;
+  }
+
+  .isi {
+  font-family: 'Hanuman';
+  font-size: 18px;
+  }
+
+  .statis h3 {
+    font-family: 'ITC Eras';
+    font-weight: 600;
+    font-size: 25px;
+  }
+
+  .box-container {
+    padding: 20px;
+  }
+}
+
+footer {
+  text-align: center;
+  background: linear-gradient(226deg, rgba(237, 255, 79, 0.87) -6.07%, #0ECE41 162.13%), #D9D9D9;
+  color: white;
+  padding: 30px 20px;
+  margin-top: 30px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px)  {
+  .flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
+}
+  </style>
+</head>
+<body>
+
+
+
+  <div class="hero">
+    <div class="square">
+      <img src="../../img/PS.png" alt="logo ps">
+      <div class="tittle">
+        <h1>Pekerjaan Sosial</h1>
+        <p>SMKN 8 Semarang</p>
+      </div>
+    </div>
+    <div class="square2">
+      <img src= '../../img/figurPS.png'>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="statis">
+      <h3 style="font-family: 'ITC Eras'; font-weight: 600;">Pengertian</h3>
+      <p class="isi">
+        Pekerjaan Sosial adalah suatu profesi yang berbasis praktik dan akademis dalam memberikan pelayanan sosial kepada individu, keluarga, kelompok atau masyarakat yang mengalami permasalahan sosial dan mewujudkan eksistensi sosialnya.
+      </p>
+
+      <h3 style="font-family: 'ITC Eras'; font-weight: 600;">Tujuan</h3>
+      <p class="isi">
+        Menyiapkan tenaga menengah sebagai asisten pekerja sosial untuk siap bekerja di lembaga kesejahteraan sosial baik pemerintah maupun swasta serta memiliki kepedulian dan rasa empati terhadap Masalah Sosial.
+      </p>
+  </div>
+
+    <div class="box-container">
+      <div class="box">
+        <h4 style="font-family: 'ITC Eras'; font-weight: 600;">Materi</h4>
+        <ol class="isi" id="materi"></ol>
+      </div>
+      <div class="box">
+        <h4 style="font-family: 'ITC Eras'; font-weight: 600;">Kejuaraan</h4>
+        <ol class="isi" id="kejuaraan"></ol>
+      </div>
+      <div class="box">
+        <h4 style="font-family: 'ITC Eras'; font-weight: 600;">Profil Lulusan</h4>
+        <ol class="isi lulusan" id="lulusan"></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+<svg class="footerWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 160 1440 160">
+  <defs>
+    <linearGradient id="waveGradient"
+                    gradientUnits="userSpaceOnUse"
+                    x1="0" y1="0" x2="1440" y2="0">
+      <stop offset="0%"   stop-color="#0ECE41"/>
+      <stop offset="100%" stop-color="#edff4fde"/>
+    </linearGradient>
+  </defs>
+<path class="wave" fill="url(#waveGradient)" fill-opacity="1" d="M0,160L80,186.7C160,213,320,267,480,277.3C640,288,800,256,960,234.7C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+
+<div class="footer">
+    <div><p>INOVATIF, DISIPLIN, KOLABORATIF.</p></div>
+
+    <div class="footerContainer">
+        <div class="footerBox1">
+            <div class="f1-header">SMKN 8 Semarang</div>
+            <div class="f1-content">
+                Jalan Pandanaran II No.12 <br>
+                Mugassari, Semarang Selatan <br>
+                Kode Pos: 50249
+            </div>
+        </div>
+
+        <div class="footerBox2">
+            <div class="f2-header">Kontak Sekolah</div>
+            <div class="f2-content">
+                <a href="https://www.instagram.com/humas.smk8semarang/">Instagram</a> <br>
+                <a href="https://www.facebook.com/smkn8semarang/">Facebook</a><br>
+                <a href="https://www.tiktok.com/@smk8semarang">TikTok</a>
+            </div>
+        </div>
+        
+        <div class="footerBox3">
+            <div class="f3-header">Kontak Tim</div>
+            <div class="f3-content">
+                <a href="https://wa.me/qr/TRBLPOLEAQNTM1">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="endInformation">
+        <div class="Inf-Phone">
+            <a><span class="material-symbols-outlined footerIcon">call</span></a>
+            <a class="Inf-Phone-Txt">(024) 8312190</a>
+        </div>
+
+        <div class="Inf-Email">
+            <a href="mailto:smkn8_semarang@yahoo.com"><span class="material-symbols-outlined footerIcon">email</span></a>
+            <a class="Inf-Email-Txt" href="mailto:smkn8_semarang@yahoo.com">smkn8_semarang@yahoo.com</a>
+        </div>
+
+        <div class="Inf-Web">
+            <a href="https://smkn8semarang.sch.id/"><span class="material-symbols-outlined footerIcon">web</span></a>
+            <a class="Inf-Web-Txt" href="https://smkn8semarang.sch.id/">smkn8semarang.sch.id</a>
+        </div>
+    </div>
+</div>
+
+    <script src="logic.js"></script>
+</body>
+</html>

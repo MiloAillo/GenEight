@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page - SMK Template</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="form-section">
+        <h2 id="form-title">Login</h2>
+
+        <!-- LOGIN -->
+        <form id="login-form" action="/login" method="post">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Enter</button>
+          <p class="register-text">
+            Don't have an account?
+            <a href="#" id="switch-to-register">Register</a>
+          </p>
+        </form>
+
+        <!-- REGISTER -->
+        <form id="register-form" style="display: none;" action="/register" method="post">
+          <label for="email">Email</label>
+          <input type="email" id="email" required name="email" />
+
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" name="user" required />
+
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" required name="pass"/>
+
+          <button type="submit">Register</button>
+          <p style="font-size: 14px;" id="warning">Email telah terpakai!</p>
+        </form>
+
+        <!-- USERNAME: outdated  -->
+        <form id="username-form" style="display: none;">
+          <label for="new-username">Choose a Username</label>
+          <input type="text" id="new-username" required />
+
+          <button type="submit">Confirm Username</button>
+        </form>
+      </div>
+
+      <div class="image-section">
+        <div class="overlay">
+          <img src="../img/loginSMKN8.png" alt="Logo" class="logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="register.js"></script>
+  <script>
+      setTimeout(clearWarning, 5000)
+
+    function clearWarning() {
+        const warning = document.querySelector('#warning');
+        warning.style.display = 'none';
+      }
+  </script>
+</body>
+</html>
