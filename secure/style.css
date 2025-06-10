@@ -512,12 +512,9 @@ nav { /* komponen utama navbar, sebisa mungkin jangan di ubah */
 .kepsekUpload form {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-}
-
-.kepsekUpload form input {
-    flex: 1;
+    flex-wrap: wrap;
 }
 
 .kepsekUpload form button {
@@ -534,6 +531,15 @@ nav { /* komponen utama navbar, sebisa mungkin jangan di ubah */
     height: 30%;
     width: 30%;
 }
+/* 
+@media (max-width: 500px) {
+    .kepsekUpload form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+} */
 
 /* FOOTER */
 .footerWave { /* styling wave nya, bisa di atur jika ada masalah */

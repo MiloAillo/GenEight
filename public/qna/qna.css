@@ -251,7 +251,8 @@ nav { /* komponen utama navbar, sebisa mungkin jangan di ubah */
 .footer p { /* styling quotes nya */
     margin: 0;
     color: #FFF;
-    font-family: "Eras Bold ITC";
+    font-family: "ITC Eras";
+    font-weight: 600;
     font-size: 30px;
     letter-spacing: 2px;
     text-align: center;
